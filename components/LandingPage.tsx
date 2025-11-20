@@ -49,6 +49,9 @@ const HEADSHOTS = [
 ];
 
 // Shuffle utility
+/**
+ * Randomly shuffles the elements of an array.
+ */
 const shuffle = (array: string[]) => [...array].sort(() => Math.random() - 0.5);
 
 const MarqueeColumn = ({ images, duration, direction = 'up' }: { images: string[], duration: string, direction?: 'up' | 'down' }) => {
@@ -69,6 +72,14 @@ const MarqueeColumn = ({ images, duration, direction = 'up' }: { images: string[
   );
 };
 
+/**
+ * Landing page component for the AI Headshot Pro application.
+ *
+ * This component manages the user interface for uploading photos, selecting styles, and generating headshots. It utilizes state management for animation steps and active users, and employs effects for dynamic content updates and animations. The component also includes a navigation bar, hero section, features section, and footer, all styled for a cohesive user experience.
+ *
+ * @param onGetStarted - Callback function to initiate the headshot creation process.
+ * @returns A React functional component rendering the landing page.
+ */
 export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [animationStep, setAnimationStep] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -99,6 +110,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   useEffect(() => {
     let timeouts: ReturnType<typeof setTimeout>[] = [];
 
+    /**
+     * Runs the animation loop by setting animation steps with delays.
+     */
     const runAnimationLoop = () => {
       setAnimationStep(0); // Reset to start
       
@@ -150,6 +164,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
   // --- DYNAMIC INTERFACE VISUALIZATION HELPERS ---
 
+  /**
+   * Retrieves the title for a given step in a process.
+   *
+   * The function evaluates the input `step` and returns a corresponding title based on its value.
+   * It categorizes the steps into four distinct titles, with specific ranges for each title.
+   * The logic ensures that the correct title is returned based on the progression of the steps.
+   *
+   * @param {number} step - The current step number in the process.
+   */
   const getStepTitle = (step: number) => {
     if (step < 3) return "1. Upload Photo";
     if (step < 5) return "2. Select Style";
@@ -157,6 +180,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     return "4. Result";
   };
 
+  /**
+   * Renders a mock interface for an animation sequence with multiple phases.
+   *
+   * The function manages the display of different components based on the current animation step, including upload, style selection, editing, and result display. It utilizes conditional rendering to show or hide elements based on the value of `animationStep`, ensuring a smooth transition between phases. The function also incorporates dynamic content and animations to enhance user experience.
+   *
+   * @returns A JSX element representing the mock interface.
+   */
   const renderMockInterface = () => {
     // Phase 1: Upload (Steps 1-2)
     const isUpload = animationStep < 3;
