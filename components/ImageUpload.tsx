@@ -17,6 +17,15 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect, onClear
     }
   }, []);
 
+  /**
+   * Processes an uploaded file to ensure it is an image and extracts its base64 data.
+   *
+   * This function checks if the provided file is of an image type. If valid, it reads the file
+   * as a data URL and extracts the base64 data along with its MIME type. Upon successful
+   * extraction, it calls the onImageSelect function with the base64 data and MIME type.
+   *
+   * @param {File} file - The file to be processed, which should be an image.
+   */
   const processFile = (file: File) => {
     if (!file.type.startsWith('image/')) {
       alert('Please upload an image file');
@@ -43,11 +52,17 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect, onClear
     setIsDragging(true);
   };
 
+  /**
+   * Handles the drag leave event by preventing default behavior and updating the dragging state.
+   */
   const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
   };
 
+  /**
+   * Handles the drop event for file uploads.
+   */
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
