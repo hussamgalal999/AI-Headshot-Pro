@@ -131,6 +131,17 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, [showLanding, selectedImage, generatedImage, loading, customizeStep]);
 
+  /**
+   * Handles the generation of an image based on user-selected parameters and styles.
+   *
+   * The function first checks if a selected image is available, then resets the UI state for loading and progress.
+   * It constructs a prompt based on the selected style and any custom instructions, simulating a progress bar during the image generation process.
+   * Upon completion, it updates the generated image or handles errors appropriately.
+   *
+   * @param {void}
+   * @returns {Promise<void>} A promise that resolves when the image generation process is complete.
+   * @throws {Error} If the image generation fails, an error message is set in the state.
+   */
   const handleGenerate = async () => {
     if (!selectedImage) return;
 
