@@ -8,13 +8,6 @@ import { LandingPage } from './components/LandingPage';
 import { generateHeadshot } from './services/gemini';
 import { ArrowRight, Loader2, AlertCircle, Sparkles, ArrowLeft, X, ChevronLeft } from 'lucide-react';
 
-/**
- * Main application component for generating professional headshots.
- *
- * This component manages the entire workflow of the headshot generation process, including state management for image selection, style customization, and loading indicators. It handles user interactions, such as image uploads and style selections, and integrates with external functions to generate the final headshot image. The component also manages animations and progress tracking throughout the process.
- *
- * @returns A JSX element representing the application interface.
- */
 const App: React.FC = () => {
   // View State: 'landing' or 'app'
   const [showLanding, setShowLanding] = useState(true);
@@ -138,21 +131,6 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, [showLanding, selectedImage, generatedImage, loading, customizeStep]);
 
-  /**
-   * Handles the generation of an image based on user-selected parameters and styles.
-   *
-   * The function initiates by checking if a selected image exists, resetting the UI state, and simulating a progress bar.
-   * It constructs a prompt based on the selected style and any custom instructions, particularly handling social media ad contexts.
-   * Finally, it attempts to generate the image using the `generateHeadshot` function, updating the UI accordingly or handling errors if they occur.
-   *
-   * @param {string} selectedImage - The image selected by the user for processing.
-   * @param {string} imageMimeType - The MIME type of the selected image.
-   * @param {string} selectedStyleId - The ID of the selected style for the image generation.
-   * @param {Object} socialData - The data related to social media context, including topic and headline.
-   * @param {string} customPrompt - Any additional custom instructions provided by the user.
-   * @returns {Promise<void>} A promise that resolves when the image generation process is complete.
-   * @throws {Error} If the image generation fails.
-   */
   const handleGenerate = async () => {
     if (!selectedImage) return;
 
@@ -225,9 +203,6 @@ const App: React.FC = () => {
     }
   };
 
-  /**
-   * Retrieves the label of the selected style or returns 'Custom Style' if not found.
-   */
   const getSelectedStyleLabel = () => {
     const style = STYLES.find(s => s.id === selectedStyleId);
     return style ? style.label : 'Custom Style';

@@ -5,54 +5,79 @@ interface LandingPageProps {
   onGetStarted: () => void;
 }
 
-// Diverse set of professional headshots for the marquee
+// Verified set of professional headshots for the marquee and active users
+// Using specific IDs to maximize reliability
 const HEADSHOTS = [
-  // Set 1
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
+  // Professional Men
   "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
-  
-  // Set 2
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1601288496920-b6154fe3626a?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=400&q=80",
   "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-
-  // Set 3
+  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
   "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
   "https://images.unsplash.com/photo-1522075469751-3a3694c60e9e?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1521119989659-a83eee488058?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1589571894960-20bbe2815d22?auto=format&fit=crop&w=400&q=80",
-
-  // Set 4
-  "https://images.unsplash.com/photo-1619380061814-58f03707f082?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80",
+  
+  // Professional Women
+  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1598550874175-4d7112ee66d9?auto=format&fit=crop&w=400&q=80",
   "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=400&q=80",
+
+  // Diverse & Creative
+  "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1619380061814-58f03707f082?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1589571894960-20bbe2815d22?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80",
   "https://images.unsplash.com/photo-1614283233556-f35b0c801ef1?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1485206412256-701b86c32796?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1580518337843-f959e992563b?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80"
+  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80",
+  "https://images.unsplash.com/photo-1521119989659-a83eee488058?auto=format&fit=crop&w=400&q=80"
 ];
 
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=400&q=80";
+
 // Shuffle utility
-/**
- * Randomly shuffles the elements of an array.
- */
 const shuffle = (array: string[]) => [...array].sort(() => Math.random() - 0.5);
+
+// --- SAFE IMAGE COMPONENT (Self-Healing) ---
+interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  fallbackSrc?: string;
+}
+
+const SafeImage: React.FC<SafeImageProps> = ({ src, alt, className, fallbackSrc = FALLBACK_IMAGE, ...props }) => {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [hasError, setHasError] = useState(false);
+
+  const handleError = () => {
+    if (!hasError) {
+      setImgSrc(fallbackSrc);
+      setHasError(true);
+    }
+  };
+
+  // Reset state if src prop changes
+  useEffect(() => {
+    setImgSrc(src);
+    setHasError(false);
+  }, [src]);
+
+  return (
+    <img 
+      src={imgSrc} 
+      alt={alt} 
+      className={`${className} ${hasError ? 'grayscale opacity-80' : ''}`} 
+      onError={handleError} 
+      {...props} 
+    />
+  );
+};
 
 const MarqueeColumn = ({ images, duration, direction = 'up' }: { images: string[], duration: string, direction?: 'up' | 'down' }) => {
   return (
@@ -63,8 +88,13 @@ const MarqueeColumn = ({ images, duration, direction = 'up' }: { images: string[
       >
         {/* Doubled list for seamless loop. We use margin-bottom instead of gap for precise height calculation */}
         {[...images, ...images].map((src, i) => (
-          <div key={i} className="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg border border-gray-100/50 mb-4">
-            <img src={src} alt={`Headshot ${i}`} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
+          <div key={i} className="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg border border-gray-100/50 mb-4 bg-gray-200">
+            <SafeImage 
+              src={src} 
+              alt={`Headshot ${i}`} 
+              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" 
+              loading="lazy" 
+            />
           </div>
         ))}
       </div>
@@ -72,25 +102,17 @@ const MarqueeColumn = ({ images, duration, direction = 'up' }: { images: string[
   );
 };
 
-/**
- * Landing page component for the AI Headshot Pro application.
- *
- * This component manages the user interface for uploading photos, selecting styles, and generating headshots. It utilizes state management for animation steps and active users, and employs effects for dynamic content updates and animations. The component also includes a navigation bar, hero section, features section, and footer, all styled for a cohesive user experience.
- *
- * @param onGetStarted - Callback function to initiate the headshot creation process.
- * @returns A React functional component rendering the landing page.
- */
 export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [animationStep, setAnimationStep] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Prepare columns with distinct shuffled subsets
-  const [col1] = useState(() => shuffle(HEADSHOTS).slice(0, 8));
-  const [col2] = useState(() => shuffle(HEADSHOTS).slice(8, 16));
-  const [col3] = useState(() => shuffle(HEADSHOTS).slice(16, 24));
-  const [col4] = useState(() => shuffle(HEADSHOTS).slice(24, 32));
+  const [col1] = useState(() => shuffle(HEADSHOTS).slice(0, 6));
+  const [col2] = useState(() => shuffle(HEADSHOTS).slice(6, 12));
+  const [col3] = useState(() => shuffle(HEADSHOTS).slice(12, 18));
+  const [col4] = useState(() => shuffle(HEADSHOTS).slice(18, 24));
 
-  // Dynamic Active Users State
+  // Dynamic Active Users State - Initialized with validated images
   const [activeUsers, setActiveUsers] = useState([
     { id: 1, url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" },
     { id: 2, url: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" },
@@ -110,9 +132,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   useEffect(() => {
     let timeouts: ReturnType<typeof setTimeout>[] = [];
 
-    /**
-     * Runs the animation loop by setting animation steps with delays.
-     */
     const runAnimationLoop = () => {
       setAnimationStep(0); // Reset to start
       
@@ -164,15 +183,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
   // --- DYNAMIC INTERFACE VISUALIZATION HELPERS ---
 
-  /**
-   * Retrieves the title for a given step in a process.
-   *
-   * The function evaluates the input `step` and returns a corresponding title based on its value.
-   * It categorizes the steps into four distinct titles, with specific ranges for each title.
-   * The logic ensures that the correct title is returned based on the progression of the steps.
-   *
-   * @param {number} step - The current step number in the process.
-   */
   const getStepTitle = (step: number) => {
     if (step < 3) return "1. Upload Photo";
     if (step < 5) return "2. Select Style";
@@ -180,13 +190,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     return "4. Result";
   };
 
-  /**
-   * Renders a mock interface for an animation sequence with multiple phases.
-   *
-   * The function manages the display of different components based on the current animation step, including upload, style selection, editing, and result display. It utilizes conditional rendering to show or hide elements based on the value of `animationStep`, ensuring a smooth transition between phases. The function also incorporates dynamic content and animations to enhance user experience.
-   *
-   * @returns A JSX element representing the mock interface.
-   */
   const renderMockInterface = () => {
     // Phase 1: Upload (Steps 1-2)
     const isUpload = animationStep < 3;
@@ -264,8 +267,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <div className={`absolute inset-0 p-6 flex flex-col transition-all duration-500 transform ${isEdit ? 'opacity-100 translate-x-0' : isStyle ? 'opacity-0 translate-x-8' : 'opacity-0 -translate-x-8 pointer-events-none'}`}>
                <div className="flex gap-4 h-full">
                   {/* Mini Preview */}
-                  <div className="w-1/3 bg-gray-800 rounded-lg overflow-hidden border border-gray-700 relative">
-                     <img src={HEADSHOTS[0]} alt="Preview" className="w-full h-full object-cover opacity-50" />
+                  <div className="w-1/3 bg-gray-800 rounded-lg overflow-hidden border border-gray-700 relative bg-gray-900">
+                     <SafeImage src={HEADSHOTS[0]} alt="Preview" className="w-full h-full object-cover opacity-50" />
                      <div className="absolute bottom-2 left-2 text-[8px] bg-black/50 text-white px-1 rounded">Original</div>
                   </div>
                   {/* Inputs */}
@@ -294,8 +297,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
 
             {/* --- COMPONENT 4: RESULT --- */}
             <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 transform ${isResult ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'}`}>
-               <div className="relative w-full h-full">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Result" className="w-full h-full object-cover opacity-90" />
+               <div className="relative w-full h-full bg-gray-800">
+                  <SafeImage src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Result" className="w-full h-full object-cover opacity-90" />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
                   
                   {/* Success Badge */}
@@ -402,7 +405,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
             <div className="flex items-center gap-4 px-5 py-3 bg-white/80 backdrop-blur-sm rounded-2xl border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 cursor-default group">
               <div className="flex -space-x-3 rtl:space-x-reverse pl-1">
                 {activeUsers.map((user, idx) => (
-                  <img 
+                  <SafeImage 
                     key={user.id}
                     className={`w-10 h-10 rounded-full border-2 border-white ring-2 ring-indigo-50 object-cover shadow-sm ${idx === 0 ? 'animate-in fade-in zoom-in slide-in-from-left-3 duration-500' : 'transition-all duration-500'}`} 
                     src={user.url} 
@@ -621,4 +624,4 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
       </footer>
     </div>
   );
-}
+};

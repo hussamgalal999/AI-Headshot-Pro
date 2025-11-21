@@ -84,7 +84,7 @@ export const STYLES: StyleOption[] = [
     id: 'ghibli-flat-2d',
     label: '2D Cartoon Ghibli',
     description: 'Clean 2D anime, cel shaded, character design',
-    promptSuffix: 'Studio Ghibli 2D Cartoon Style. Create a high-quality 2D anime character portrait. Style: Hayao Miyazaki / Studio Ghibli character design. Key features: Clean black outlines, flat cel-shaded coloring, vibrant and warm colors, expressive anime eyes, simple nose and mouth. The image should look like a screencap from "Kiki\'s Delivery Service" or "My Neighbor Totoro". Hand-drawn 2D animation aesthetic. Background: detailed watercolor style background. (Avoid: 3D render, realistic skin texture, painterly heavy shading on face, noise, photorealism, semi-realism, cgi)',
+    promptSuffix: 'Studio Ghibli 2D Anime Style. Transform the subject into a hand-drawn 2D anime character in the style of Hayao Miyazaki. ESSENTIAL: Flat cel-shaded coloring, distinct black outlines, and simplified anime facial features. Skin should be flat color with minimal hard-edge shading. Eyes should be large and expressive in Ghibli style. Background should be a painted watercolor landscape. The image must look like a frame from a 1980s anime movie like My Neighbor Totoro or Kiki\'s Delivery Service. (Negative: 3D render, realistic skin texture, gradients on face, photorealism, semi-realism, volume, cgi, plastic look, photography)',
     icon: '🍃',
     isPaid: true,
   },

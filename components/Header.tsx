@@ -1,9 +1,6 @@
 import React from 'react';
 import { Camera, Sparkles } from 'lucide-react';
 
-/**
- * Renders the header component for the AI HeadshotPro application.
- */
 export const Header: React.FC = () => {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">

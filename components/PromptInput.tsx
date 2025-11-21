@@ -15,20 +15,6 @@ interface PromptInputProps {
   onSocialDataChange: (data: SocialMediaData) => void;
 }
 
-/**
- * Renders a prompt input component for user interaction.
- *
- * The component conditionally displays input fields for social media configurations or quick action buttons based on the selectedStyleId.
- * It manages the state of social data and allows users to add quick actions to the input value.
- * The component utilizes handleAddQuickAction and handleSocialChange functions to update the respective states.
- *
- * @param {Object} props - The properties for the component.
- * @param {string} props.value - The current value of the input.
- * @param {function} props.onChange - Callback function to handle input value changes.
- * @param {string} props.selectedStyleId - The ID of the selected style, determining the component's behavior.
- * @param {Object} props.socialData - The current social media data.
- * @param {function} props.onSocialDataChange - Callback function to handle changes in social data.
- */
 export const PromptInput: React.FC<PromptInputProps> = ({ 
   value, 
   onChange, 
@@ -46,17 +32,11 @@ export const PromptInput: React.FC<PromptInputProps> = ({
     "Blue background"
   ];
 
-  /**
-   * Handles adding a quick action to the current value.
-   */
   const handleAddQuickAction = (action: string) => {
     const newValue = value ? `${value}, ${action}` : action;
     onChange(newValue);
   };
 
-  /**
-   * Updates the social media data with the specified key and value.
-   */
   const handleSocialChange = (key: keyof SocialMediaData, val: string) => {
     onSocialDataChange({ ...socialData, [key]: val });
   };
