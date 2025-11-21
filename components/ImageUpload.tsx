@@ -7,6 +7,19 @@ interface ImageUploadProps {
   selectedImage: string | null;
 }
 
+/**
+ * A React functional component for uploading images with drag-and-drop support.
+ *
+ * The component allows users to select an image file either by dragging and dropping it or by clicking to browse.
+ * It processes the selected file, ensuring it is an image, and extracts the base64 data and mime type to pass to the onImageSelect callback.
+ * If an image is already selected, it displays the image with an option to clear it.
+ *
+ * @param {Object} props - The component props.
+ * @param {Function} props.onImageSelect - Callback function to handle the selected image data.
+ * @param {Function} props.onClear - Callback function to clear the selected image.
+ * @param {string} props.selectedImage - The base64 string of the currently selected image.
+ * @returns {JSX.Element} The rendered component.
+ */
 export const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect, onClear, selectedImage }) => {
   const [isDragging, setIsDragging] = useState(false);
 
@@ -43,11 +56,17 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect, onClear
     setIsDragging(true);
   };
 
+  /**
+   * Handles the drag leave event by preventing default behavior and updating the dragging state.
+   */
   const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
   };
 
+  /**
+   * Handles the drop event for file uploads.
+   */
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);

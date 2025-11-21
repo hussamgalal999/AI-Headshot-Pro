@@ -55,6 +55,9 @@ const SafeImage: React.FC<SafeImageProps> = ({ src, alt, className, fallbackSrc 
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
 
+  /**
+   * Handles the error by setting the image source to a fallback and updating the error state.
+   */
   const handleError = () => {
     if (!hasError) {
       setImgSrc(fallbackSrc);
@@ -102,6 +105,15 @@ const MarqueeColumn = ({ images, duration, direction = 'up' }: { images: string[
   );
 };
 
+/**
+ * Landing page component for the AI Headshot Pro application.
+ *
+ * This component manages the user interface for uploading photos, selecting styles, and generating headshots. It utilizes state management for animation steps and active users, and employs effects for dynamic content updates and animations. The component also includes a navigation bar and footer, providing a complete user experience.
+ *
+ * @param {Object} props - The properties for the component.
+ * @param {Function} props.onGetStarted - Callback function to handle the "Get Started" action.
+ * @returns {JSX.Element} The rendered landing page component.
+ */
 export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   const [animationStep, setAnimationStep] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -132,6 +144,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
   useEffect(() => {
     let timeouts: ReturnType<typeof setTimeout>[] = [];
 
+    /**
+     * Runs the animation loop by setting animation steps with delays.
+     */
     const runAnimationLoop = () => {
       setAnimationStep(0); // Reset to start
       
@@ -190,6 +205,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted }) => {
     return "4. Result";
   };
 
+  /**
+   * Renders a mock interface for an animation sequence with multiple phases.
+   *
+   * The function determines the current phase of the animation based on the value of animationStep, which controls the visibility and transitions of various components including upload UI, style selection, editing options, and the final result display. Each phase is conditionally rendered with appropriate styles and animations to enhance user experience.
+   *
+   * @returns A JSX element representing the mock interface with dynamic content based on the animation step.
+   */
   const renderMockInterface = () => {
     // Phase 1: Upload (Steps 1-2)
     const isUpload = animationStep < 3;
